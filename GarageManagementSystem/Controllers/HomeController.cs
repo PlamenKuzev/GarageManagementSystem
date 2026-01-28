@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using GarageManagementSystem.Interfaces;
-using GarageManagementSystem.Models;
+using GarageManagementSystem.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GarageManagementSystem.Controllers

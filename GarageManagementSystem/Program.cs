@@ -1,5 +1,10 @@
 using GarageManagementSystem.Interfaces;
 using GarageManagementSystem.Services;
+using GarageManagementSystem.Data;
+using Microsoft.EntityFrameworkCore;
+
+// After AddControllersWithViews() but before builder.Build():
+
 
 
 
@@ -15,6 +20,8 @@ namespace GarageManagementSystem
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IGarageService, Services.GerageService>();
 
+            builder.Services.AddDbContext<AppDbContext>(options => 
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 
