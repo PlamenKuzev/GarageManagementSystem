@@ -31,3 +31,4 @@ C:\Users\plame\source\repos\GarageManagementSystem\GarageManagementSystem\obj\De
 C:\Users\plame\source\repos\GarageManagementSystem\GarageManagementSystem\obj\Debug\net8.0\GarageManagementSystem.pdb
 C:\Users\plame\source\repos\GarageManagementSystem\GarageManagementSystem\obj\Debug\net8.0\GarageManagementSystem.genruntimeconfig.cache
 C:\Users\plame\source\repos\GarageManagementSystem\GarageManagementSystem\obj\Debug\net8.0\ref\GarageManagementSystem.dll
+C:\Users\plame\source\repos\GarageManagementSystem\GarageManagementSystem\obj\Debug\net8.0\GarageManagementSystem.sourcelink.json

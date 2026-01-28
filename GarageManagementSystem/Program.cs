@@ -1,3 +1,8 @@
+using GarageManagementSystem.Interfaces;
+using GarageManagementSystem.Services;
+
+
+
 namespace GarageManagementSystem
 {
     public class Program
@@ -8,6 +13,12 @@ namespace GarageManagementSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IGarageService, Services.GerageService>();
+
+
+
+
+
 
             var app = builder.Build();
 
