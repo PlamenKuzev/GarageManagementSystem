@@ -13,10 +13,15 @@ namespace GarageManagementSystem.Models
         public string Brand { get; set; }
 
         [Required]
-        [StringLength(200)]
+        [StringLength(500)]
         public string IssueDescription { get; set; }
 
         public bool IsReady { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime ArrivalDate { get; set; }
+
 
         [DataType(DataType.Date)]
         public DateTime? CompletionDate { get; set; }
