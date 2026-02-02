@@ -14,6 +14,5 @@ namespace GarageManagementSystem.Models
 
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
-
     }
 }
