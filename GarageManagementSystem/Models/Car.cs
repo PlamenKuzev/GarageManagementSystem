@@ -10,11 +10,11 @@ namespace GarageManagementSystem.Models
 
         [Required]
         [StringLength(50)]
-        public string Brand { get; set; }
+        public string Brand { get; set; } = null!;
 
         [Required]
         [StringLength(500)]
-        public string IssueDescription { get; set; }
+        public string IssueDescription { get; set; } = null!;
 
         public bool IsReady { get; set; }
 
@@ -29,8 +29,8 @@ namespace GarageManagementSystem.Models
         [Column(TypeName= "decimal(18,2)")]
         public decimal RepairPrice { get; set; }
 
-
         public int OwnerId { get; set; }
-        public Owner Owner { get; set; }
+
+        public Owner? Owner { get; set; }
     }
 }

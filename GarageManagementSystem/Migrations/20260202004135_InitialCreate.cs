@@ -47,8 +47,9 @@ namespace GarageManagementSystem.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Brand = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    IssueDescription = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    IssueDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     IsReady = table.Column<bool>(type: "bit", nullable: false),
+                    ArrivalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CompletionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RepairPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OwnerId = table.Column<int>(type: "int", nullable: false)

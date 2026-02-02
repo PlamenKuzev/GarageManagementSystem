@@ -30,6 +30,9 @@ namespace GarageManagementSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("ArrivalDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Brand")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -43,8 +46,8 @@ namespace GarageManagementSystem.Migrations
 
                     b.Property<string>("IssueDescription")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("OwnerId")
                         .HasColumnType("int");

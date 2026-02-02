@@ -18,6 +18,6 @@ namespace GarageManagementSystem.Models
         public string Email { get; set; }
 
 
-        public ICollection<Car> Cars { get; set; }
+        public ICollection<Car> Cars = new List<Car>();
     }
 }

@@ -10,11 +10,11 @@ using GarageManagementSystem.Models;
 
 namespace GarageManagementSystem.Controllers
 {
-    public class CarsController : Controller
+    public class OwnersController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CarsController(AppDbContext context)
+        public OwnersController(AppDbContext context)
         {
             _context = context;
         }
@@ -22,8 +22,7 @@ namespace GarageManagementSystem.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Cars.Include(c => c.Owner);
-            return View(await appDbContext.ToListAsync());
+            return View(await _context.Owners.ToListAsync());
         }
 
 
@@ -34,44 +33,34 @@ namespace GarageManagementSystem.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Cars
-                .Include(c => c.Owner)
+            var owner = await _context.Owners
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (car == null)
+            if (owner == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            return View(owner);
         }
 
 
         public IActionResult Create()
         {
-            ViewData["OwnerId"] = new SelectList(_context.Owners, "Id", "FullName");
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Brand,IssueDescription,IsReady,ArrivalDate,CompletionDate,RepairPrice,OwnerId")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,FullName,Phone,Email")] Owner owner)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-                foreach (var error in errors)
-                {
-                    Console.WriteLine(error.ErrorMessage);
-                }
-            }
             if (ModelState.IsValid)
             {
-                _context.Add(car);
+                _context.Add(owner);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Owners, "Id", "FullName", car.OwnerId);
-            return View(car);
+            return View(owner);
         }
 
 
@@ -82,21 +71,20 @@ namespace GarageManagementSystem.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Cars.FindAsync(id);
-            if (car == null)
+            var owner = await _context.Owners.FindAsync(id);
+            if (owner == null)
             {
                 return NotFound();
             }
-            ViewData["OwnerId"] = new SelectList(_context.Owners, "Id", "FullName", car.OwnerId);
-            return View(car);
+            return View(owner);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,IssueDescription,IsReady,ArrivalDate,CompletionDate,RepairPrice,OwnerId")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Phone,Email")] Owner owner)
         {
-            if (id != car.Id)
+            if (id != owner.Id)
             {
                 return NotFound();
             }
@@ -105,12 +93,12 @@ namespace GarageManagementSystem.Controllers
             {
                 try
                 {
-                    _context.Update(car);
+                    _context.Update(owner);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CarExists(car.Id))
+                    if (!OwnerExists(owner.Id))
                     {
                         return NotFound();
                     }
@@ -121,8 +109,7 @@ namespace GarageManagementSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Owners, "Id", "FullName", car.OwnerId);
-            return View(car);
+            return View(owner);
         }
 
 
@@ -133,15 +120,14 @@ namespace GarageManagementSystem.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Cars
-                .Include(c => c.Owner)
+            var owner = await _context.Owners
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (car == null)
+            if (owner == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            return View(owner);
         }
 
 
@@ -149,19 +135,19 @@ namespace GarageManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var car = await _context.Cars.FindAsync(id);
-            if (car != null)
+            var owner = await _context.Owners.FindAsync(id);
+            if (owner != null)
             {
-                _context.Cars.Remove(car);
+                _context.Owners.Remove(owner);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CarExists(int id)
+        private bool OwnerExists(int id)
         {
-            return _context.Cars.Any(e => e.Id == id);
+            return _context.Owners.Any(e => e.Id == id);
         }
     }
 }
