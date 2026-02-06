@@ -20,3 +20,42 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+ /* Dark mode */
+ body.dark-mode {
+     background-color: #121212;
+     color: #e0e0e0;
+ }
+
+     body.dark-mode .navbar,
+     body.dark-mode .footer {
+         background-color: #1f1f1f !important;
+     }
+
+     body.dark-mode .card,
+     body.dark-mode .table,
+     body.dark-mode .form-control {
+         background-color: #1e1e1e;
+         color: #e0e0e0;
+     }
+
+         body.dark-mode .table th,
+         body.dark-mode .table td {
+             border-color: #2c2c2c;
+         }
+
+     body.dark-mode .btn-outline-secondary {
+         color: #e0e0e0;
+         border-color: #e0e0e0;
+     }
+
+    /* Navbar text in dark mode */
+    body.dark-mode .navbar-brand,
+    body.dark-mode .nav-link,
+    body.dark-mode .navbar-text {
+        color: #e0e0e0 !important;
+    }
+
+        body.dark-mode .nav-link:hover {
+            color: #ffffff !important;
+        }
