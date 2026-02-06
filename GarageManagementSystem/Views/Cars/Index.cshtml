@@ -46,7 +46,14 @@
                 @Html.DisplayFor(modelItem => item.IssueDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsReady)
+                @if (item.IsReady)
+                {
+                    <span class="badge bg-success">Ready</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning text-dark">In Progress</span>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ArrivalDate)

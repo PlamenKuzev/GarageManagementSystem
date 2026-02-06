@@ -25,8 +25,15 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IsReady)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsReady)
+        <dd class="col-sm-10">
+            @if (Model.IsReady)
+            {
+                <span class="badge bg-success">Ready</span>
+            }
+            else
+            {
+                <span class="badge bg-warning text-dark">In Progress</span>
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ArrivalDate)

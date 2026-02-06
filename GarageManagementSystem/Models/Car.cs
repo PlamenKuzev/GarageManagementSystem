@@ -18,7 +18,7 @@ namespace GarageManagementSystem.Models
         [Display(Name = "Issue Description")]
         public string IssueDescription { get; set; } = null!;
 
-        [Display(Name = "Ready")]
+        [Display(Name = "Status")]
         public bool IsReady { get; set; }
 
         [Required]
