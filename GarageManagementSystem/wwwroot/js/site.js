@@ -4,7 +4,7 @@
 // Write your JavaScript code.
 document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("themeToggle");
-    const body = document.body;
+    const body = document.documentElement;
 
     // Load saved preference
     const savedTheme = localStorage.getItem("theme");
