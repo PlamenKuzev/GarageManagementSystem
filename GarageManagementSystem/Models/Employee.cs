@@ -13,6 +13,7 @@ namespace GarageManagementSystem.Models
         public string Name { get; set; } = null!;
 
         [DataType(DataType.Date)]
+        [Display(Name = "Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
     }
 }

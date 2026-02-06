@@ -9,12 +9,15 @@ namespace GarageManagementSystem.Models
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; } = null!;
 
         [Phone]
+        [Display(Name = "Phone Number")]
         public string Phone { get; set; }
 
         [EmailAddress]
+        [Display(Name = "Email Adress")]
         public string Email { get; set; }
 
 
