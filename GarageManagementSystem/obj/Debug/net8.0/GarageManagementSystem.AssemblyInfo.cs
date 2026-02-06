@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GarageManagementSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+632e70bc278d7bf033d3f00eccf0c91be35d514d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62a66bcc2161c419816f118284e6acb53ce22bbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("GarageManagementSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GarageManagementSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
