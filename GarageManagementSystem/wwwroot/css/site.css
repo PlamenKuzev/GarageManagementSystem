@@ -22,21 +22,35 @@ body {
   margin-bottom: 60px;
 }
 
+.navbar-brand {
+    max-width: 25px;
+}
+
+
+
+
+  
  /* Dark mode */
+body {
+    background-color: #ffffff;
+    color: #212529;
+}
 
 .main-content {
     background: transparent;
     min-height: calc(100vh - 60px - 73px);
 }
 
- html.dark-mode {   
-     background-color: #121212;
-     color: #e0e0e0;
- }
+html.dark-mode body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
 
     html.dark-mode .navbar,
     html.dark-mode .footer {
         background-color: #1f1f1f !important;
+        color: #aaa;
     }
 
     html.dark-mode .card,
@@ -63,9 +77,24 @@ body {
         color: #e0e0e0 !important;
     }
 
-        html.dark-mode .nav-link:hover {
+            html.dark-mode .nav-link:hover {
             color: #ffffff !important;
         }
 
 
+/* Hover Lift Effect */
 
+.dashboard-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+    .dashboard-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255,255,255,0.05);
+    cursor: pointer;
+}
