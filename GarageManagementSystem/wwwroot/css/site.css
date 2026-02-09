@@ -30,7 +30,7 @@ body {
 
 
   
- /* Dark mode */
+/* Dark mode */
 body {
     background-color: #ffffff;
     color: #212529;
@@ -38,7 +38,7 @@ body {
 
 .main-content {
     background: transparent;
-    min-height: calc(100vh - 60px - 73px);
+    min-height: calc(100vh - 60px - 75px);
 }
 
 html.dark-mode body {
@@ -70,7 +70,7 @@ html.dark-mode body {
         border-color: #e0e0e0;
     }
 
-    /* Navbar text in dark mode */
+/* Navbar text in dark mode */
     html.dark-mode .navbar-brand,
     html.dark-mode .nav-link,
     html.dark-mode .navbar-text {
@@ -82,8 +82,8 @@ html.dark-mode body {
         }
 
 
-/* Hover Lift Effect */
 
+/* Hover Lift Effect */
 .dashboard-card {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -97,4 +97,29 @@ html.dark-mode body {
 .table-hover tbody tr:hover {
     background-color: rgba(255,255,255,0.05);
     cursor: pointer;
+}
+
+
+/* Light Mode Gradient */
+html body{
+    background: linear-gradient(
+        180deg,
+    #f5f6f8 0%,
+    #BABABA 100%);
+}
+
+/* Dark Mode Gradient*/
+    html.dark-mode body {
+        background: linear-gradient( 
+            180deg,
+        #0f0f0f 0%,
+        #292929 50%,
+        #1b1b1b 100%);
+    }
+
+
+/* Card Polish */
+    .card body {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
