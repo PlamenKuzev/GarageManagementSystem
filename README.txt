@@ -62,7 +62,7 @@ All code was reviewed, understood, and integrated manually as part of the learni
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/PlamenKuzev/GarageManagementSystem.git
 
 2. Open the solution in Visual Studio
 
